@@ -3,7 +3,14 @@
 class Welcome extends CI_Controller {
 
     public function index(){
-        $this->load->view('index');
+        $this->load->model('push_model');
+        $messages=$this->push_model->push_messages();
+        $this->load->model("picture_model");
+        $carousels=$this->picture_model->Carousel();
+        $this->load->view('index',array(
+            'messages'=>$messages,
+            'carousels'=>$carousels
+        ));
     }
     public function login(){
         $this->load->view('login');

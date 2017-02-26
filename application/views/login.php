@@ -29,12 +29,10 @@
                 <button class="btn btn-info btn-lg">登录</button>
                 <button class="btn btn-info btn-lg" ><a href="welcome/reg" style="color: #fff">注册</a></button>
             </form>
-<!--            <p><a href="welcome/index">跳过登录</a></p>-->
-            <span style="display:inline-block;margin:10px 0 10px 80%"><a href="welcome/login">跳过登录</a></span>
+            <span style="display:inline-block;margin:10px 0 10px 80%"><a href="welcome/index">跳过登录</a></span>
 
         </div>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
-<!--        <script src="../../assets/js/login.js"></script>-->
     </body>
 </html>
