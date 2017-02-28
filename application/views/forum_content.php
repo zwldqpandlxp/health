@@ -7,8 +7,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
-    <link rel="stylesheet" href="css/amazeui.min.css">
-    <link rel="stylesheet" href="css/wap.css">
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/wap.css">
     <title>内容页列表页</title>
 </head>
 <body style="background:#ececec">
@@ -90,7 +90,7 @@
     <div class="pet_content pet_content_list">
         <div class="pet_zlnr">
             <div class="pet_zlnr_user">
-                <div class="pet_zlnr_user_l"><img src="img/qq1.png" alt=""></div>
+                <div class="pet_zlnr_user_l"><img src="assets/img/qq1.png" alt=""></div>
                 <div class="pet_zlnr_user_r">
                     <div class="pet_zlnr_user_r_name">Abby Reyna</div>
                     <div class="pet_zlnr_user_r_map">GuangZhou TianHe</div>
@@ -102,13 +102,13 @@
                          class="am-paragraph am-paragraph-default"
 
                          data-am-paragraph="{ tableScrollable: true, pureview: true }">
-                    <img src="img/s1.jpg" alt="">
+                    <img src="assets/img/s1.jpg" alt="">
                     <p>
                         意大利地处亚平宁半岛，气候温暖，四季分明。与亚洲不同，意大利的冬季多雨而夏季干燥，而且夏季也不会很热。所以总体来说，每年4、5月的春季和10、11月的秋季适合旅行。如果是想去购物，那么每年1月中旬至2月上旬的冬季打折季和7月中旬至8月上旬的夏季打折季不可错过。而想去领略地中海风情，那么在每年的6月下旬到9月上旬去那不勒斯湾或者西西里岛最佳。</p>
                 </article>
                 <div class="pet_zlnr_user_list">
-                    <div class="pet_zlnr_user_list_l"><img src="img/qq2.png" alt=""><img src="img/qq3.png" alt=""><img
-                            src="img/qq4.png" alt="">
+                    <div class="pet_zlnr_user_list_l"><img src="assets/img/qq2.png" alt=""><img src="assets/img/qq3.png" alt=""><img
+                            src="assets/img/qq4.png" alt="">
                         <div class="pet_zlnr_user_list_l_num">+56</div>
                         <div class="pet_zlnr_user_list_l_num_font">喜欢</div>
                     </div>
@@ -118,33 +118,33 @@
                 </div>
                 <div class="pet_zlnr_pl">
                     <div class="pet_zlnr_pl_block">
-                        <div class="pet_zlnr_pl_block_l"><img src="img/qq1.png" alt=""></div>
+                        <div class="pet_zlnr_pl_block_l"><img src="assets/img/qq1.png" alt=""></div>
                         <div class="pet_zlnr_pl_block_r">TuniuDesign
                             <span>长滩岛之美丽，有如它的名字，那是长达七公里的银色沙滩。清晨，从小旅馆中散步而出，坐在椰子树下，清凉的海风送来阵阵茉莉花香。</span></div>
 
                     </div>
                     <div class="pet_zlnr_pl_block">
-                        <div class="pet_zlnr_pl_block_l"><img src="img/qq2.png" alt=""></div>
+                        <div class="pet_zlnr_pl_block_l"><img src="assets/img/qq2.png" alt=""></div>
                         <div class="pet_zlnr_pl_block_r">KiKiWiWi
                             <span>华丽丽的精美内饰，笑意盈盈的船员，可口的意式风味美食，每天看不完的各类精彩纷呈的风情歌舞表演，一切想象不到的视觉和心灵享受，注定是在那海上意大利的夏天。</span>
                         </div>
 
                     </div>
                     <div class="pet_zlnr_pl_block">
-                        <div class="pet_zlnr_pl_block_l"><img src="img/qq3.png" alt=""></div>
+                        <div class="pet_zlnr_pl_block_l"><img src="assets/img/qq3.png" alt=""></div>
                         <div class="pet_zlnr_pl_block_r">时光待你好
                             <span>这是楼主第一次写游记，有不足之处还请见谅刚毕业不久，虽然已经进入职场，但是由于习惯了和男朋友每几个月都出去旅行放松一下，这次就申请积攒几天假和男票商量着要去海边转转。</span>
                         </div>
 
                     </div>
                     <div class="pet_zlnr_pl_block">
-                        <div class="pet_zlnr_pl_block_l"><img src="img/qq4.png" alt=""></div>
+                        <div class="pet_zlnr_pl_block_l"><img src="assets/img/qq4.png" alt=""></div>
                         <div class="pet_zlnr_pl_block_r">TuniuDesign
                             <span>长滩岛之美丽，有如它的名字，那是长达七公里的银色沙滩。清晨，从小旅馆中散步而出，坐在椰子树下，清凉的海风送来阵阵茉莉花香。</span></div>
 
                     </div>
                     <div class="pet_zlnr_pl_block" style="border-bottom:none">
-                        <div class="pet_zlnr_pl_block_l"><img src="img/qq5.png" alt=""></div>
+                        <div class="pet_zlnr_pl_block_l"><img src="assets/img/qq5.png" alt=""></div>
                         <div class="pet_zlnr_pl_block_r">落绪纷
                             <span>第一眼的爱尔兰因全国草地遍布，被人们美誉为“绿岛”、“绿宝石”和“翡翠岛国"。这座岛国拥有着迷人的自然美景，属于欧洲的天涯海角，古老充满传奇色彩的古堡建筑和不失现代与活力的繁华大都市，。</span>
                         </div>
@@ -156,8 +156,8 @@
         <div class="pet_article_footer_info">Copyright(c)2017 By 毕业设计</div>
     </div>
 </div>
-<script src="js/jquery.min.js"></script>
-<script src="js/amazeui.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
 <script>
     $(function () {
 
