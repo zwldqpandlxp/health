@@ -28,7 +28,7 @@
                 <img src="<?php echo $carousel->pict_Url?>" style="height: 375px">
                 <div class="pet_slider_font">
                     <span class="pet_slider_emoji"> (╭￣3￣)╭♡   </span>
-                    <span>“大白”有望成为现实：充气机器人研究取得进展</span>
+                    <span><?php echo $carousel->pict_Introduce?></span>
                 </div>
                 <div class="pet_slider_shadow"></div>
             </li>
@@ -43,7 +43,7 @@
         <ul class="pet_circle_nav_list">
             <li><a href="" class="iconfont pet_nav_xinxianshi ">&#xe61e;</a><span>健康助手</span></li>
             <li><a href="" class="iconfont pet_nav_zhangzhishi ">&#xe607;</a><span>个人信息</span></li>
-            <li><a href="" class="iconfont pet_nav_kantuya ">&#xe62c;</a><span>健康论坛</span></li>
+            <li><a href="welcome/article" class="iconfont pet_nav_kantuya ">&#xe62c;</a><span>健康论坛</span></li>
             <li><a href="javascript:;" class="iconfont pet_nav_gengduo ">&#xe600;</a><span>更多资讯</span></li>
         </ul>
         <div class="pet_more_list">
