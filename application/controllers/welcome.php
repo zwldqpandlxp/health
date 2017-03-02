@@ -2,6 +2,9 @@
 
 class Welcome extends CI_Controller {
 
+    public function person(){
+        $this->load->view('person');
+    }
     public function index(){
         $this->load->model('push_model');
         $messages=$this->push_model->push_messages();
