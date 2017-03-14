@@ -1,3 +1,6 @@
+<?php
+    $loginedUser=$this->session->userdata('loginedUser');
+?>
 <!doctype html>
 <html>
 <head>
@@ -9,6 +12,8 @@
     <meta name="description" content=""/>
     <link rel="stylesheet" href="assets/css/amazeui.min.css">
     <link rel="stylesheet" href="assets/css/wap.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>小萌萌</title>
 </head>
 <body style="background:#ececec">
@@ -17,94 +22,37 @@
         <header data-am-widget="header"
                 class="am-header am-header-default pet_head_block">
             <div class="am-header-left am-header-nav ">
-                <a href="#left-link" class="iconfont pet_head_jt_ico">&#xe601;</a>
+                <a href="welcome/index" class="iconfont pet_head_jt_ico">&#xe601;</a>
             </div>
-            <div class="pet_news_list_tag_name">小萌萌</div>
-            <div class="am-header-right am-header-nav">
-                <a href="javascript:;" class="iconfont pet_head_gd_ico">&#xe600;</a>
+            <div class="pet_news_list_tag_name">admin</div>
+            <div class="am-header-right am-header-nav ">
+                <div class="am-dropdown" data-am-dropdown>
+                    <button class="am-btn am-dropdown-toggle" style="background: #303435"><a href="javascript:;" class="iconfont pet_head_gd_ico">&#xe600;</a><span class="am-icon-caret-down"></span></button>
+                    <div class="am-dropdown-content">
+                        <li style="margin-left:5px"><a href="" class="iconfont">&#xe61e;<span style="margin-left:10px">健康助手</span></a></li>
+<!--                        <li style="margin-left:10px"><a href="welcome/person" class="iconfont">&#xe607;<span style="margin-left:10px">个人信息</span></a></li>-->
+                        <li style="margin-left:5px"><a href="welcome/article" class="iconfont">&#xe62c;<span style="margin-left:10px">健康论坛</span></a></li>
+                        <li style="margin-left:5px"><a href="javascript:;" class="iconfont">&#xe600;<span style="margin-left:10px">更多资讯</span></a></li>
+                        <li style="margin-left:5px"><a href="welcome/complete_person_imperfect?id='$loginedUser->user_Id'" class="iconfont">&#xe608;<span style="margin-left:10px">修改个人信息</span></a></li>
+
+                        <!--                        <li><a href="javascript:;" class="iconfont">修改个人信息</a></li>-->
+                    </div>
+                </div>
+
             </div>
         </header>
     </div>
-
-    <div class="pet_more_list">
-        <div class="pet_more_list_block">
-            <div class="iconfont pet_more_close">×</div>
-            <div class="pet_more_list_block">
-                <div class="pet_more_list_block_name">
-                    <div class="pet_more_list_block_name_title">阅读 Read</div>
-                    <a class="pet_more_list_block_line"> <i
-                            class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe61e;</i>
-                        <div class="pet_more_list_block_line_font">新鲜事</div>
-                    </a>
-                    <a class="pet_more_list_block_line"> <i
-                            class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe607;</i>
-                        <div class="pet_more_list_block_line_font">趣闻</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe62c;</i>
-                        <div class="pet_more_list_block_line_font">阅读</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_mengzhuanti pet_more_list_block_line_ico">&#xe622;</i>
-                        <div class="pet_more_list_block_line_font">专题</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_bk pet_more_list_block_line_ico">&#xe629;</i>
-                        <div class="pet_more_list_block_line_font">订阅</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_wd pet_more_list_block_line_ico">&#xe602;</i>
-                        <div class="pet_more_list_block_line_font">专栏</div>
-                    </a>
-                    <div class="pet_more_list_block_name_title pet_more_list_block_line_height">服务 Service</div>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_xinxianshi pet_more_list_block_line_ico">&#xe61e;</i>
-                        <div class="pet_more_list_block_line_font">新鲜事</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_zhangzhishi pet_more_list_block_line_ico">&#xe607;</i>
-                        <div class="pet_more_list_block_line_font">趣闻</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_kantuya pet_more_list_block_line_ico">&#xe62c;</i>
-                        <div class="pet_more_list_block_line_font">阅读</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_mengzhuanti pet_more_list_block_line_ico">&#xe622;</i>
-                        <div class="pet_more_list_block_line_font">专题</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_bk pet_more_list_block_line_ico">&#xe629;</i>
-                        <div class="pet_more_list_block_line_font">订阅</div>
-                    </a>
-                    <a class="pet_more_list_block_line">
-                        <i class="iconfont pet_nav_wd pet_more_list_block_line_ico">&#xe602;</i>
-                        <div class="pet_more_list_block_line_font">专栏</div>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
     <div class="pet_content pet_content_list">
         <div class="pet_grzx">
-
             <div class="pet_grzx_nr">
                 <div class="pet_grzx_ico">
-                    <img src="assets/img/qq1.png" alt="">
+                        <img src="<?php echo $person_info->pict_Url?>" alt="">
                 </div>
-                <div class="pet_grzx_name">AamazeUI</div>
-                <div class="pet_grzx_map">美国</div>
+                <div class="pet_grzx_name"><?php echo $person_info->pers_Name?></div>
+                <div class="pet_grzx_map">China</div>
                 <div class="pet_grzx_num_font">
-                    我坐在水屋下边的平台看着大海，吹着海风，真的是太喜欢了。夜晚有好多小白鲨鱼，好多种鱼。
+                    <?php echo $person_info->pers_Sign?>
                 </div>
-                <div class="pet_grzx_num">
-                    <span>653<i>喜欢</i></span>
-                    <span>234<i>关注</i></span>
-                    <span>34<i>文章</i></span>
-                </div>
-
             </div>
 
             <div class="pet_grzx_list">
@@ -221,20 +169,20 @@
                 </div>
 
             </div>
-            <div class="pet_article_dowload">
-                <div class="pet_article_dowload_title">关于Amaze UI</div>
-                <div class="pet_article_dowload_content">
-                    <div class="pet_article_dowload_triangle"></div>
-                    <div class="pet_article_dowload_ico"><img src="assets/img/footdon.png" alt=""></div>
-                    <div class="pet_article_dowload_content_font">
-                        Amaze UI 以移动优先（Mobile first）为理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。
-                    </div>
-                    <div class="pet_article_dowload_all">
-                        <a href="###" class="pet_article_dowload_Az am-icon-apple"> App store</a>
-                        <a href="###" class="pet_article_dowload_Pg am-icon-android"> Android</a>
-                    </div>
-                </div>
-            </div>
+<!--            <div class="pet_article_dowload">-->
+<!--                <div class="pet_article_dowload_title">关于Amaze UI</div>-->
+<!--                <div class="pet_article_dowload_content">-->
+<!--                    <div class="pet_article_dowload_triangle"></div>-->
+<!--                    <div class="pet_article_dowload_ico"><img src="assets/img/footdon.png" alt=""></div>-->
+<!--                    <div class="pet_article_dowload_content_font">-->
+<!--                        Amaze UI 以移动优先（Mobile first）为理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。-->
+<!--                    </div>-->
+<!--                    <div class="pet_article_dowload_all">-->
+<!--                        <a href="###" class="pet_article_dowload_Az am-icon-apple"> App store</a>-->
+<!--                        <a href="###" class="pet_article_dowload_Pg am-icon-android"> Android</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
 
         <div class="pet_article_footer_info">Copyright(c)2015 PetShow All Rights Reserved</div>

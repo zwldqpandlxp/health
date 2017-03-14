@@ -1,3 +1,6 @@
+<?php
+$loginedUser=$this->session->userdata('loginedUser');
+?>
 <!doctype html>
 <html>
 <head>
@@ -16,7 +19,7 @@
   <header data-am-widget="header"
           class="am-header am-header-default pet_head_block">
       <div class="am-header-left am-header-nav ">
-          <a href="#left-link" class="iconfont pet_head_jt_ico">&#xe601;</a>
+          <a href="welcome/index" class="iconfont pet_head_jt_ico">&#xe601;</a>
       </div>
 
       <h1 class="am-header-title pet_article_user">
@@ -29,8 +32,7 @@
         <div class="pet_article_user_info_tab_font_center"><a href="###">查看全部资料</a></div> -->
         </div>
       </div>
-      <span class="pet_article_user_ico"><img src="assets/img/a1.png" alt="" class=""></span>
-      <span class="pet_article_user_name">EGOIST</span>
+      <span class="pet_article_user_name">admin</span>
       </h1>
 
       <div class="am-header-right am-header-nav">
@@ -117,55 +119,39 @@
 <div class="pet_content">
 <div class="pet_content_block">
   <article data-am-widget="paragraph" class="am-paragraph am-paragraph-default pet_content_article" data-am-paragraph="{ tableScrollable: true, pureview: true }">
-  <h1 class="pet_article_title">你认识萌萌的小熊猫吗？</h1>
-  <div class="pet_article_user_time">发表于：2015-09-25</div>
-      <img src="assets/img/a2.jpg"><p class=paragraph-default-p>南极洲又称<a href="###">第七大陆</a>，是地球上最后一个被发现、唯一没有土著人居住的大陆。</p><p>南极大陆为通常所说的南大洋（太平洋、印度洋和大西洋的南部水域）所包围，它与南美洲最近的距离为965公里，距新西兰2000公里、距澳大利亚2500公里、距南非3800公里、距中国北京的距离约有12000公里。南极大陆的总面积为1390万平方公里，相当于中国和印巴次大陆面积的总和，居世界各洲第五位。</p><p><blockquote><p>有一天我们也要去南极走走！！</p></blockquote></p><img src="assets/img/a3.jpg" /><p>整个南极大陆被一个巨大的冰盖所覆盖，平均海拔为2350米。南极洲是由冈瓦纳大陆分离解体而成，是世界上最高的大陆。南极横断山脉将南极大陆分成东西两部分。这两部分在地理和地质上差别很大。</p><img src="assets/img/a2.jpg" /><p>东南极洲是一块很古老的大陆，据科学家推算,已有几亿年的历史。它的中心位于难接近点，从任何海边到难接近点的距离都很远。东南极洲平均海拔高度2500米，最大高度4800 米。在东南极洲有南极大陆最大的活火山，即位于罗斯岛上的埃里伯斯火山，海拔高度3795米，有四个喷火口</p>
+  <h1 class="pet_article_title"><?php echo $push_content[0]->push_Title?></h1>
+  <div class="pet_article_user_time"><?php echo $push_content[0]->push_Time?></div>
+      <img src="<?php echo $push_content[0]->pict_Url?>">
+      <p class=paragraph-default-p>
+          <?php echo $push_content[0]->push_Content?>
+      </p>
 
   </article>
-        <ul class="like_share_block">
-        <li><a class="link_share_button" href="###"><i class="iconfont share_ico_link">&#xe62f;</i>1460</a></li>
-        <li><a class="link_share_button" href="###"><i class="iconfont share_ico_wx">&#xe630;</i>微信</a></li>
-        <li><a class="link_share_button" href="###"><i class="iconfont share_ico_pyq">&#xe62e;</i>朋友圈</a></li>
-      </ul>
-    <div class="pet_article_dowload">
-      <div class="pet_article_dowload_title">关于Amaze UI</div>
-      <div class="pet_article_dowload_content"><div class="pet_article_dowload_triangle"></div>
-      <div class="pet_article_dowload_ico"><img src="assets/img/footdon.png" alt=""></div>
-      <div class="pet_article_dowload_content_font">
-Amaze UI 以移动优先（Mobile first）为理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。
-      </div>
-      <div class="pet_article_dowload_all">
-        <a href="###" class="pet_article_dowload_Az am-icon-apple"> App store</a>
-        <a href="###" class="pet_article_dowload_Pg am-icon-android"> Android</a>
-      </div>
-      </div>
-  </div>
+    <div class="am-g doc-am-g">
+        <div class="am-u-sm-9 am-u-md-9 am-u-lg-9"><input type="text" class="am-form-field am-radius comment" placeholder="评论" /></div>
+        <div class="am-u-sm-3 am-u-md-3 am-u-lg-3"><button type="button" class="am-btn am-btn-secondary" @click="addComment()">评论</button></div>
+    </div>
 </div>
 <div class="pet_comment_list">
   <div class="pet_comment_list_wap"><div class="pet_comment_list_title">精彩评论</div>
 
   <div data-am-widget="tabs" class="am-tabs am-tabs-default pet_comment_list_tab" >
-      <ul class="am-tabs-nav am-cf pet_comment_list_title_tab">
-          <li class="am-active"><a href="[data-tab-panel-0]">人气</a></li>
-          <li class=""><a href="[data-tab-panel-1]">最新</a></li>
-          <li class=""><a href="[data-tab-panel-2]">最早</a></li>
-      </ul>
       <div class="am-tabs-bd pet_pl_list">
           <div data-tab-panel-0 class="am-tab-panel am-active">
             <div class="pet_comment_list_block">
-              <div class="pet_comment_list_block_l"><img src="assets/img/a1.png" alt=""></div>
+              <div class="pet_comment_list_block_l"><img :src="assets/img/a1.png" alt=""></div>
               <div class="pet_comment_list_block_r">
                 <div class="pet_comment_list_block_r_info">Amaze</div>
                 <div class="pet_comment_list_block_r_text">那时候有多好，任雨打湿裙角。忍不住哼起，心爱的旋律。绿油油的树叶，自由地在说笑。燕子忙归巢，风铃在舞蹈。</div>
                 <div class="pet_comment_list_block_r_bottom">
                   <div class="pet_comment_list_bottom_info_l">10分钟前</div>
                   <div class="pet_comment_list_bottom_info_r">
-                  <span><i class="iconfont">&#xe631;</i>5 </span>
-                  <span> 回复</span></div>
+<!--                  <span><i class="iconfont">&#xe631;</i>5 </span>-->
+<!--                  <span> 回复</span></div>-->
                 </div>
               </div>
             </div>
-                        <div class="pet_comment_list_block">
+         <div class="pet_comment_list_block">
               <div class="pet_comment_list_block_l"><img src="assets/img/a2.png" alt=""></div>
               <div class="pet_comment_list_block_r">
                 <div class="pet_comment_list_block_r_info">一如既往</div>
@@ -178,7 +164,7 @@ Amaze UI 以移动优先（Mobile first）为理念，从小屏逐步扩展到�
                 </div>
               </div>
             </div>
-                        <div class="pet_comment_list_block">
+          <div class="pet_comment_list_block">
               <div class="pet_comment_list_block_l"><img src="assets/img/a3.png" alt=""></div>
               <div class="pet_comment_list_block_r">
                 <div class="pet_comment_list_block_r_info">AllThe</div>
@@ -191,93 +177,7 @@ Amaze UI 以移动优先（Mobile first）为理念，从小屏逐步扩展到�
                 </div>
               </div>
             </div>
-                        <div class="pet_comment_list_block">
-              <div class="pet_comment_list_block_l"><img src="assets/img/a4.png" alt=""></div>
-              <div class="pet_comment_list_block_r">
-                <div class="pet_comment_list_block_r_info">Drary</div>
-                <div class="pet_comment_list_block_r_text">无论历经怎样的艰难坎坷，总有你相伴陪我度过。</div>
-                <div class="pet_comment_list_block_r_bottom">
-                  <div class="pet_comment_list_bottom_info_l">1小时前</div>
-                  <div class="pet_comment_list_bottom_info_r">
-                  <span><i class="iconfont">&#xe631;</i>5 </span>
-                  <span> 回复</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div data-tab-panel-1 class="am-tab-panel ">
-                                  <div class="pet_comment_list_block">
-              <div class="pet_comment_list_block_l"><img src="assets/img/a2.png" alt=""></div>
-              <div class="pet_comment_list_block_r">
-                <div class="pet_comment_list_block_r_info">一如既往</div>
-                <div class="pet_comment_list_block_r_text"><span>@Drary</span>没有老友你的陪伴，日子真是漫长与你重逢之时，我会敞开心扉倾诉所有。</div>
-                <div class="pet_comment_list_block_r_bottom">
-                  <div class="pet_comment_list_bottom_info_l">15分钟前</div>
-                  <div class="pet_comment_list_bottom_info_r">
-                  <span><i class="iconfont">&#xe631;</i>5 </span>
-                  <span> 回复</span></div>
-                </div>
-              </div>
-            </div>
-                       <div class="pet_comment_list_block">
-              <div class="pet_comment_list_block_l"><img src="assets/img/a3.png" alt=""></div>
-              <div class="pet_comment_list_block_r">
-                <div class="pet_comment_list_block_r_info">AllThe</div>
-                <div class="pet_comment_list_block_r_text">表紙の裏に移らないよに あけた一枚目のページの裏に透けた文字めくろうとして 指がとまって</div>
-                <div class="pet_comment_list_block_r_bottom">
-                  <div class="pet_comment_list_bottom_info_l">30分钟前</div>
-                  <div class="pet_comment_list_bottom_info_r">
-                  <span><i class="iconfont">&#xe631;</i>5 </span>
-                  <span> 回复</span></div>
-                </div>
-              </div>
-            </div>
-                    <div class="pet_comment_list_block">
-              <div class="pet_comment_list_block_l"><img src="assets/img/a1.png" alt=""></div>
-              <div class="pet_comment_list_block_r">
-                <div class="pet_comment_list_block_r_info">Amaze</div>
-                <div class="pet_comment_list_block_r_text">那时候有多好，任雨打湿裙角。忍不住哼起，心爱的旋律。绿油油的树叶，自由地在说笑。燕子忙归巢，风铃在舞蹈。</div>
-                <div class="pet_comment_list_block_r_bottom">
-                  <div class="pet_comment_list_bottom_info_l">10分钟前</div>
-                  <div class="pet_comment_list_bottom_info_r">
-                  <span><i class="iconfont">&#xe631;</i>5 </span>
-                  <span> 回复</span></div>
-                </div>
-              </div>
-            </div>
-
-
-                        <div class="pet_comment_list_block">
-              <div class="pet_comment_list_block_l"><img src="assets/img/a4.png" alt=""></div>
-              <div class="pet_comment_list_block_r">
-                <div class="pet_comment_list_block_r_info">Drary</div>
-                <div class="pet_comment_list_block_r_text">无论历经怎样的艰难坎坷，总有你相伴陪我度过。</div>
-                <div class="pet_comment_list_block_r_bottom">
-                  <div class="pet_comment_list_bottom_info_l">1小时前</div>
-                  <div class="pet_comment_list_bottom_info_r">
-                  <span><i class="iconfont">&#xe631;</i>5 </span>
-                  <span> 回复</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div data-tab-panel-2 class="am-tab-panel ">
-                                <div class="pet_comment_list_block">
-              <div class="pet_comment_list_block_l"><img src="assets/img/a1.png" alt=""></div>
-              <div class="pet_comment_list_block_r">
-                <div class="pet_comment_list_block_r_info">Amaze</div>
-                <div class="pet_comment_list_block_r_text">那时候有多好，任雨打湿裙角。忍不住哼起，心爱的旋律。绿油油的树叶，自由地在说笑。燕子忙归巢，风铃在舞蹈。</div>
-                <div class="pet_comment_list_block_r_bottom">
-                  <div class="pet_comment_list_bottom_info_l">10分钟前</div>
-                  <div class="pet_comment_list_bottom_info_r">
-                  <span><i class="iconfont">&#xe631;</i>5 </span>
-                  <span> 回复</span></div>
-                </div>
-              </div>
-            </div>
-
-
-                        <div class="pet_comment_list_block">
+         <div class="pet_comment_list_block">
               <div class="pet_comment_list_block_l"><img src="assets/img/a4.png" alt=""></div>
               <div class="pet_comment_list_block_r">
                 <div class="pet_comment_list_block_r_info">Drary</div>
@@ -303,8 +203,30 @@ Amaze UI 以移动优先（Mobile first）为理念，从小屏逐步扩展到�
 <div class="pet_article_footer_info">Copyright(c)2017 By 毕业设计</div>
 </div>
 </div>
+
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/axios.min.js"></script>
+    <script src="assets/js/vue.min.js"></script>
+<!--<script>-->
+<!--    var vm=new Vue({-->
+<!--        el:".pet_comment_list",-->
+<!--        data:{-->
+<!--            commentList:[]-->
+<!--        },-->
+<!--        mounted:function(){-->
+<!---->
+<!--        },-->
+<!--        methods:{-->
+<!--            addComment:function(){-->
+<!--                var _this=this;-->
+<!--                axios.get('welcome/push_content_comments?comm=$(".comment").val()&user_Id=$loginedUser->user_Id&arti_Id=$arti_Id').then(function(res){-->
+<!--                    _this.commentList = res.data.result.commentList;-->
+<!--                });-->
+<!--            }-->
+<!--        }-->
+<!--    })-->
+<!--</script>-->
 <script>
 $(function(){
 

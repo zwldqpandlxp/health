@@ -7,7 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/login.css"/>
     <title>用户登录</title>
 </head>
     <body style="font-family: Microsoft YaHei">
@@ -21,14 +21,16 @@
         <div class="container" >
             <form action="welcome/do_login" class="form-group " method="post">
                 <div class="box">
-                    <label for="username" class="info form-control">账号</label><input type="text" placeholder="请输入账号" class="form-control" id="username" name="username"/>
+                    <label for="username" class="info form-control">账号</label>
+                    <input type="search" placeholder="请输入账号" class="form-control" id="username" name="username"/>
                 </div>
                 <div class="box">
                     <label for="password" class="info form-control">密码</label><input type="password" placeholder="请输入密码" class="form-control" id="password" name="password"/>
                 </div>
                 <button class="btn btn-info btn-lg">登录</button>
-                <button class="btn btn-info btn-lg" ><a href="welcome/reg" style="color: #fff">注册</a></button>
+<!--                <button class="btn btn-info btn-lg" ><a href="welcome/reg" style="color: #fff">注册</a></button>-->
             </form>
+            <button class="btn btn-info btn-lg" ><a href="welcome/reg" style="color: #fff">注册</a></button>
             <span style="display:inline-block;margin:10px 0 10px 80%"><a href="welcome/index">跳过登录</a></span>
 
         </div>

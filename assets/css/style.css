@@ -1,6 +1,6 @@
-body{
-    padding-top: 70px;
-}
+/*body{*/
+    /*padding-top: 70px;*/
+/*}*/
 
 .container button{
     width: 100%;
@@ -10,6 +10,7 @@ body{
     display: -webkit-box;
     border: 1px solid #ccc;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 .container .box .info{
     margin-top: 5px;
@@ -18,8 +19,12 @@ body{
     text-overflow:ellipsis;
     white-space:nowrap;
     overflow:hidden;
+    margin-bottom: 10px;
 }
-#username,#password,#repassword{
+.radio{
+    margin-bottom: 10px;
+}
+#username,#password,#repassword,#height,#weight,#waist,#hipline,#telephone{
     width:95%;
     height: 100%;
     padding-top: 20px;
@@ -29,23 +34,23 @@ body{
     .container .box .info{
         width: 15%;
     }
-    #username,#password,#repassword{
+    #username,#password,#repassword,#height,#weight,#waist,#hipline,#telephone{
         width: 85%;
     }
 }
 @media (min-width: 320px){
     .container .box .info{
-        width: 20%;
+        width: 25%;
     }
-    #username,#password,#repassword{
-        width: 80%;
+    #username,#password,#repassword,#height,#weight,#waist,#hipline,#telephone{
+        width: 75%;
     }
 }
 @media (min-width: 768px){
     .container .box .info{
         width: 10%;
     }
-    #username,#password,#repassword{
+    #username,#password,#repassword,#height,#weight,#waist,#hipline,#telephone{
         width: 90%;
     }
 }
@@ -53,9 +58,13 @@ body{
     .container .box .info{
         width: 6%;
     }
-    #username,#password,#repassword{
+    #username,#password,#repassword,#height,#weight,#waist,#hipline,#telephone{
         width: 94%;
     }
+}
+.am-dropdown-content a{
+
+    color:#303435;
 }
 /*@media (max-width: 992px){*/
 /*.container . box .info{*/

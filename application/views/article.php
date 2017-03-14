@@ -9,20 +9,47 @@
     <meta name="description" content=""/>
     <link rel="stylesheet" href="assets/css/amazeui.min.css">
     <link rel="stylesheet" href="assets/css/wap.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
     <title>内容页列表页</title>
 </head>
 <body style="background:#ececec">
 <div class="pet_mian">
-    <div class="pet_head">
-        <header data-am-widget="header"
-                class="am-header am-header-default pet_head_block">
-            <div class="am-header-left am-header-nav ">
-                <a href="welcome/index" class="iconfont pet_head_jt_ico">&#xe601;</a>
-            </div>
+<!--    <div class="pet_head">-->
+<!--        <header data-am-widget="header"-->
+<!--                class="am-header am-header-default pet_head_block">-->
+<!--            <div class="am-header-left am-header-nav ">-->
+<!--                <a href="welcome/index" class="iconfont pet_head_jt_ico">&#xe601;</a>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="am-header-right am-header-nav">-->
+<!--                <a href="javascript:;" class="iconfont pet_head_gd_ico">&#xe600;</a>-->
+<!--            </div>-->
+<!--        </header>-->
+<!--    </div>-->
+<!--    <div class="pet_mian">-->
+        <div class="pet_head">
+            <header data-am-widget="header"
+                    class="am-header am-header-default pet_head_block">
+                <div class="am-header-left am-header-nav ">
+                    <a href="welcome/index" class="iconfont pet_head_jt_ico">&#xe601;</a>
+                </div>
+                <div class="pet_news_list_tag_name">admin</div>
+                <div class="am-header-right am-header-nav ">
+                    <div class="am-dropdown" data-am-dropdown>
+                        <button class="am-btn am-dropdown-toggle" style="background: #303435"><a href="javascript:;" class="iconfont pet_head_gd_ico">&#xe600;</a><span class="am-icon-caret-down"></span></button>
+                        <div class="am-dropdown-content">
+                            <li style="margin-left:5px"><a href="" class="iconfont">&#xe61e;<span style="margin-left:10px">健康助手</span></a></li>
+                            <li style="margin-left:5px"><a href="welcome/person" class="iconfont">&#xe607;<span style="margin-left:10px">个人中心</span></a></li>
+<!--                            <li style="margin-left:10px"><a href="welcome/article" class="iconfont">&#xe62c;<span style="margin-left:10px">健康论坛</span></a></li>-->
+                            <li style="margin-left:5px"><a href="javascript:;" class="iconfont">&#xe600;<span style="margin-left:10px">更多资讯</span></a></li>
+                            <li style="margin-left:5px"><a href="welcome/person" class="iconfont">&#xe608;<span style="margin-left:10px">修改个人信息</span></a></li>
 
-            <div class="am-header-right am-header-nav">
-                <a href="javascript:;" class="iconfont pet_head_gd_ico">&#xe600;</a>
-            </div>
+                            <!--                        <li><a href="javascript:;" class="iconfont">修改个人信息</a></li>-->
+                        </div>
+                    </div>
+
+                </div>
+<!--        </div>-->
         </header>
     </div>
 
