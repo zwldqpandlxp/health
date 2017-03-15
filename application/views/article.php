@@ -61,30 +61,30 @@
                         <ul class="am-list">
 
                             <?php
-                            foreach($users as $key => $user){
+                            foreach($articles as $key => $article){
                             ?>
                             <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-right pet_list_one_block">
                                 <div class="pet_list_one_info">
                                     <div class="pet_list_one_info_l">
 
-                                        <div class="pet_list_one_info_ico"><img src="<?php echo $user->pict_Url?>" alt=""></div>
-                                        <div class="pet_list_one_info_name"><?php echo $user->user_Name?></div>
+                                        <div class="pet_list_one_info_ico"><img src="<?php echo $users[$key]->pict_Url?>" alt=""></div>
+                                        <div class="pet_list_one_info_name"><?php echo $users[$key]->user_Name?></div>
                                     </div>
                                     <div class="pet_list_one_info_r">
                                         <div class="pet_list_tag pet_list_tag_xxs">新鲜事</div>
                                     </div>
                                 </div>
                                 <div class=" am-u-sm-8 am-list-main pet_list_one_nr">
-                                    <h3 class="am-list-item-hd pet_list_one_bt"><a href="welcome/forum_content?arti_Id=<?php echo $articles[$key]->arti_Id?>"
-                                                                                   class=""><?php echo $articles[$key]->arti_Title?></a></h3>
+                                    <h3 class="am-list-item-hd pet_list_one_bt"><a href="welcome/forum_content?arti_Id=<?php echo $article->arti_Id?>"
+                                                                                   class=""><?php echo $article->arti_Title?></a></h3>
                                     <div class="am-list-item-text pet_list_one_text">
-                                        <?php echo $articles[$key]->arti_Content?>
+                                        <?php echo $article->arti_Content?>
                                     </div>
 
                                 </div>
                                 <div class="am-u-sm-4 am-list-thumb">
                                     <a href="###" class="">
-                                        <img src="<?php echo $articles[$key]->pict_Url?>" class="pet_list_one_img" alt=""/>
+                                        <img src="<?php echo $article->pict_Url?>" class="pet_list_one_img" alt=""/>
                                     </a>
                                 </div>
                             </li>
