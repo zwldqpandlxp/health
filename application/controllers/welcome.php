@@ -147,6 +147,18 @@ class Welcome extends CI_Controller {
             'users'=>$users
         ));
     }
+    public function insert_article(){
+        $loginedUser=$this->session->userdata("loginedUser");
+        $arti_Title=$this->input->post('title');
+        $arti_Content=$this->input->post('content');
+        date_default_timezone_set("Asia/Shanghai");
+        $arti_Date=date('Y-m-d H:i:s');
+        $this->load->model("article_model");
+        $row=$this->article_model->insert_article($loginedUser->user_Id,$arti_Title,$arti_Content,$arti_Date);
+        if($row>0){
+            redirect('welcome/article');
+        }
+    }
      public function check_reg(){
         $username=$this->input->post("username");
         $password=$this->input->post("password");
@@ -215,5 +227,45 @@ class Welcome extends CI_Controller {
 //         $this->load->view("login");
          redirect("welcome/login");
      }
+    public function helper(){
+        function getWeek(){
+            $day = date("w");
+            switch($day){
+                case 1:
+                    return 1;
+                    break;
+                case 2:
+                    return 2;
+                    break;
+                case 3:
+                    return 3;
+                    break;
+                case 4:
+                    return 4;
+                    break;
+                case 5:
+                    return 5;
+                    break;
+                case 6:
+                    return 6;
+                    break;
+                case 0:
+                    return 7;
+                    break;
+            }
+        }
+        $week=getWeek();
+        $this->load->model('food_model');
+        $foods=$this->food_model->select_foods_by_week($week);
+//        var_dump($week);
+//        die();
+        $this->load->view('helper',array(
+            'foods'=>$foods
+        ));
+    }
+    public function stepsSubmit(){
+        $value=$this->input->get('value');
+        echo $value/10000*300;
+    }
 }
 

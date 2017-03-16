@@ -40,9 +40,6 @@ $loginedUser=$this->session->userdata('loginedUser');
       </div>
   </header>
 </div>
-
-
-
     <div class="pet_more_list"><div class="pet_more_list_block">
     <div class="iconfont pet_more_close">×</div>
     <div class="pet_more_list_block">
@@ -127,80 +124,6 @@ $loginedUser=$this->session->userdata('loginedUser');
       </p>
 
   </article>
-    <div class="am-g doc-am-g">
-        <div class="am-u-sm-9 am-u-md-9 am-u-lg-9"><input type="text" class="am-form-field am-radius comment" placeholder="评论" /></div>
-        <div class="am-u-sm-3 am-u-md-3 am-u-lg-3"><button type="button" class="am-btn am-btn-secondary" @click="addComment()">评论</button></div>
-    </div>
-</div>
-<div class="pet_comment_list">
-  <div class="pet_comment_list_wap"><div class="pet_comment_list_title">精彩评论</div>
-
-  <div data-am-widget="tabs" class="am-tabs am-tabs-default pet_comment_list_tab" >
-      <div class="am-tabs-bd pet_pl_list">
-          <div data-tab-panel-0 class="am-tab-panel am-active">
-            <div class="pet_comment_list_block">
-              <div class="pet_comment_list_block_l"><img :src="assets/img/a1.png" alt=""></div>
-              <div class="pet_comment_list_block_r">
-                <div class="pet_comment_list_block_r_info">Amaze</div>
-                <div class="pet_comment_list_block_r_text">那时候有多好，任雨打湿裙角。忍不住哼起，心爱的旋律。绿油油的树叶，自由地在说笑。燕子忙归巢，风铃在舞蹈。</div>
-                <div class="pet_comment_list_block_r_bottom">
-                  <div class="pet_comment_list_bottom_info_l">10分钟前</div>
-                  <div class="pet_comment_list_bottom_info_r">
-<!--                  <span><i class="iconfont">&#xe631;</i>5 </span>-->
-<!--                  <span> 回复</span></div>-->
-                </div>
-              </div>
-            </div>
-         <div class="pet_comment_list_block">
-              <div class="pet_comment_list_block_l"><img src="assets/img/a2.png" alt=""></div>
-              <div class="pet_comment_list_block_r">
-                <div class="pet_comment_list_block_r_info">一如既往</div>
-                <div class="pet_comment_list_block_r_text"><span>@Drary</span>没有老友你的陪伴，日子真是漫长与你重逢之时，我会敞开心扉倾诉所有。</div>
-                <div class="pet_comment_list_block_r_bottom">
-                  <div class="pet_comment_list_bottom_info_l">15分钟前</div>
-                  <div class="pet_comment_list_bottom_info_r">
-                  <span><i class="iconfont">&#xe631;</i>5 </span>
-                  <span> 回复</span></div>
-                </div>
-              </div>
-            </div>
-          <div class="pet_comment_list_block">
-              <div class="pet_comment_list_block_l"><img src="assets/img/a3.png" alt=""></div>
-              <div class="pet_comment_list_block_r">
-                <div class="pet_comment_list_block_r_info">AllThe</div>
-                <div class="pet_comment_list_block_r_text">表紙の裏に移らないよに あけた一枚目のページの裏に透けた文字めくろうとして 指がとまって</div>
-                <div class="pet_comment_list_block_r_bottom">
-                  <div class="pet_comment_list_bottom_info_l">30分钟前</div>
-                  <div class="pet_comment_list_bottom_info_r">
-                  <span><i class="iconfont">&#xe631;</i>5 </span>
-                  <span> 回复</span></div>
-                </div>
-              </div>
-            </div>
-         <div class="pet_comment_list_block">
-              <div class="pet_comment_list_block_l"><img src="assets/img/a4.png" alt=""></div>
-              <div class="pet_comment_list_block_r">
-                <div class="pet_comment_list_block_r_info">Drary</div>
-                <div class="pet_comment_list_block_r_text">无论历经怎样的艰难坎坷，总有你相伴陪我度过。</div>
-                <div class="pet_comment_list_block_r_bottom">
-                  <div class="pet_comment_list_bottom_info_l">1小时前</div>
-                  <div class="pet_comment_list_bottom_info_r">
-                  <span><i class="iconfont">&#xe631;</i>5 </span>
-                  <span> 回复</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-  </div>
-
-
-
-
-  </div>
-</div>
-
-<div class="pet_article_footer_info">Copyright(c)2017 By 毕业设计</div>
 </div>
 </div>
 
@@ -208,25 +131,6 @@ $loginedUser=$this->session->userdata('loginedUser');
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/axios.min.js"></script>
     <script src="assets/js/vue.min.js"></script>
-<!--<script>-->
-<!--    var vm=new Vue({-->
-<!--        el:".pet_comment_list",-->
-<!--        data:{-->
-<!--            commentList:[]-->
-<!--        },-->
-<!--        mounted:function(){-->
-<!---->
-<!--        },-->
-<!--        methods:{-->
-<!--            addComment:function(){-->
-<!--                var _this=this;-->
-<!--                axios.get('welcome/push_content_comments?comm=$(".comment").val()&user_Id=$loginedUser->user_Id&arti_Id=$arti_Id').then(function(res){-->
-<!--                    _this.commentList = res.data.result.commentList;-->
-<!--                });-->
-<!--            }-->
-<!--        }-->
-<!--    })-->
-<!--</script>-->
 <script>
 $(function(){
 

@@ -42,7 +42,7 @@
 
     <div class="pet_circle_nav">
         <ul class="pet_circle_nav_list">
-            <li><a href="" class="iconfont pet_nav_xinxianshi ">&#xe61e;</a><span>健康助手</span></li>
+            <li><a href="welcome/helper" class="iconfont pet_nav_xinxianshi ">&#xe61e;</a><span>健康助手</span></li>
             <li><a href="welcome/person" class="iconfont pet_nav_zhangzhishi ">&#xe607;</a><span>个人信息</span></li>
             <li><a href="welcome/article" class="iconfont pet_nav_kantuya ">&#xe62c;</a><span>健康论坛</span></li>
             <li><a href="javascript:;" class="iconfont pet_nav_gengduo ">&#xe600;</a><span>更多资讯</span></li>

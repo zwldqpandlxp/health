@@ -27,64 +27,60 @@
                     <button class="am-btn am-dropdown-toggle" style="background: #303435"><a href="javascript:;" class="iconfont pet_head_gd_ico">&#xe600;</a><span class="am-icon-caret-down"></span></button>
                     <div class="am-dropdown-content">
                         <li style="margin-left:10px"><a href="" class="iconfont">&#xe61e;<span style="margin-left:10px">健康助手</span></a></li>
-<!--                        <li style="margin-left:10px"><a href="welcome/person" class="iconfont">&#xe607;<span style="margin-left:10px">个人信息</span></a></li>-->
+                        <!--                        <li style="margin-left:10px"><a href="welcome/person" class="iconfont">&#xe607;<span style="margin-left:10px">个人信息</span></a></li>-->
                         <li style="margin-left:10px"><a href="welcome/article" class="iconfont">&#xe62c;<span style="margin-left:10px">健康论坛</span></a></li>
                         <li style="margin-left:10px"><a href="javascript:;" class="iconfont">&#xe600;<span style="margin-left:10px">更多资讯</span></a></li>
-<!--                        <li style="margin-left:5px"><a href="welcome/complete_person_imperfect?id=$loginedUser->user_Id" class="iconfont">&#xe608;<span style="margin-left:10px">修改个人信息</span></a></li>-->
+                        <!--                        <li style="margin-left:5px"><a href="welcome/complete_person_imperfect?id=$loginedUser->user_Id" class="iconfont">&#xe608;<span style="margin-left:10px">修改个人信息</span></a></li>-->
                     </div>
                 </div>
-                </div>
             </div>
-        </header>
     </div>
-    <div class="pet_content pet_content_list">
-        <div class="pet_grzx">
-            <div class="pet_grzx_nr">
-                <div class="pet_grzx_ico">
-                    <img src="<?php echo $img->pict_Url?>" alt="">
-                </div>
-                <div class="pet_grzx_name">你好没有注册哦</div>
-                <div class="pet_grzx_map">中国</div>
-                <div class="pet_grzx_num_font">
-                    运动是一切生命的源泉
-                </div>
+    </header>
+</div>
+<div class="pet_content pet_content_list">
+    <div class="pet_grzx">
+        <div class="pet_grzx_nr">
+            <div class="pet_grzx_ico">
+                <img src="<?php echo $img->pict_Url?>" alt="">
             </div>
-            <div class="pet_grzx_list">
-                <div class="pet_content_main pet_article_like_delete">
-                    <div data-am-widget="list_news" class="am-list-news am-list-news-default am-no-layout">
-                        <div class="am-list-news-bd">
-                            <div class="container">
-                                <div class="panel panel-info">
-                                    <div class="container">
-                                        <form action="welcome/do_person_imperfect" class="form-group" method="post">
-<!--                                          --><?php
-//                                          var_dump($persons);
-//                                          die();
-//                                          ?>
-                                            <div class="box">
-                                                <label for="username" class="info form-control">昵称</label>
-                                                <input type="text" placeholder="请输入昵称" class="form-control" id="username" name="username" value="<?php echo isset($persons[0])?$persons[0]->pers_Name:''?>"/>
-                                            </div>
-                                            <div class="box" style="margin: 10px 0;padding:5px 0">
-                                                <!--                            <p><label for="date" class="info form-control">生日</label></p>-->
-                                                <input type="date" class="form-control" id="date" name="date" style="border:0" value="<?php echo isset($persons[0])?$persons[0]->pers_Birthday:''?>"/>
-                                            </div>
-                                            <div class="box" style="padding:10px">
-                                                <span>性别</span>
-                                                <?php
-                                                if(!isset($persons[0])){
-                                                    ?>
-                                                    <label class="radio-inline">
-                                                        <input type="radio" name="sex" id="inlineRadio1" value="1"> 男
-                                                    </label>
-                                                    <label class="radio-inline">
-                                                        <input type="radio" name="sex" id="inlineRadio2" value="2"> 女
-                                                    </label>
-                                                    <?php
-                                                }
+            <div class="pet_grzx_name">你还没有注册哦</div>
+            <div class="pet_grzx_map">中国</div>
+            <div class="pet_grzx_num_font">
+                运动是一切生命的源泉
+            </div>
+        </div>
+        <div class="pet_grzx_list">
+            <div class="pet_content_main pet_article_like_delete">
+                <div data-am-widget="list_news" class="am-list-news am-list-news-default am-no-layout">
+                    <div class="am-list-news-bd">
+                        <div class="container">
+                            <div class="panel panel-info">
+                                <div class="container">
+                                    <form action="welcome/do_person_imperfect" class="form-group" method="post">
+                                        <div class="box">
+                                            <label for="username" class="info form-control">昵称</label>
+                                            <input type="text" placeholder="请输入昵称" class="form-control" id="username" name="username" value="<?php echo isset($persons[0])?$persons[0]->pers_Name:''?>"/>
+                                        </div>
+                                        <div class="box">
+                                            <label for="username" class="info form-control">年龄</label>
+                                            <input type="text" class="form-control" id="username" name="date" value="<?php echo isset($persons[0])?$persons[0]->pers_Birthday:''?>"/>
+                                        </div>
+                                        <div class="box" style="padding:10px">
+                                            <span>性别</span>
+                                            <?php
+                                            if(!isset($persons[0])){
                                                 ?>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="sex" id="inlineRadio1" value="1"> 男
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="sex" id="inlineRadio2" value="2"> 女
+                                                </label>
                                                 <?php
-                                                if(isset($persons[0])&&$persons[0]->pers_Sex==1){
+                                            }
+                                            ?>
+                                            <?php
+                                            if(isset($persons[0])&&$persons[0]->pers_Sex==1){
                                                 ?>
                                                 <label class="radio-inline">
                                                     <input type="radio" name="sex" id="inlineRadio1" value="1" checked> 男
@@ -93,48 +89,48 @@
                                                     <input type="radio" name="sex" id="inlineRadio2" value="0"> 女
                                                 </label>
                                                 <?php
-                                                    }
+                                            }
+                                            ?>
+                                            <?php
+                                            if(isset($persons[0])&&$persons[0]->pers_Sex==2){
                                                 ?>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="sex" id="inlineRadio1" value="1" > 男
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="sex" id="inlineRadio2" value="0" checked> 女
+                                                </label>
                                                 <?php
-                                                if(isset($persons[0])&&$persons[0]->pers_Sex==2){
-                                                    ?>
-                                                    <label class="radio-inline">
-                                                        <input type="radio" name="sex" id="inlineRadio1" value="1" > 男
-                                                    </label>
-                                                    <label class="radio-inline">
-                                                        <input type="radio" name="sex" id="inlineRadio2" value="0" checked> 女
-                                                    </label>
-                                                    <?php
-                                                }
-//                                                ?>
-                                            </div>
+                                            }
+                                            //                                                ?>
+                                        </div>
 
-                                    <div class="box">
-                                        <label for="height" class="info form-control">身高</label>
-                                        <input type="text" placeholder="请输入身高" class="form-control" id="height" name="height" value="<?php echo isset($persons[0])?$persons[0]->pers_Height:''?>"/>
-                                    </div>
-                                    <div class="box">
-                                        <label for="weight" class="info form-control">体重</label>
-                                            <input type="text" placeholder="请输入体重" class="form-control" id="weight" name="weight" value="<?php echo isset($persons[0])?$persons[0]->pers_Weight:''?>"/>
-                                    </div>
-                                    <div class="box">
-                                        <label for="waist" class="info form-control">腰围</label>
-                                        <input type="text" placeholder="请输入腰围" class="form-control" id="waist" name="waist" value="<?php echo isset($persons[0])?$persons[0]->pers_Waist:''?>"/>
-                                    </div>
-                                    <div class="box">
-                                        <label for="hipline" class="info form-control">臀围</label>
-                                        <input type="text" placeholder="请输入臀围" class="form-control" id="hipline" name="hipline" value="<?php echo isset($persons[0])?$persons[0]->pers_Hipline:''?>"/>
-                                    </div>
-                                    <div class="box">
-                                        <label for="telephone" class="info form-control">电话</label>
-                                        <input type="text" placeholder="请输入联系方式" class="form-control" id="telephone" name="telephone" value="<?php echo isset($persons[0])?$persons[0]->pers_Telephone:''?>"/>
-                                    </div>
-                                    <div class="box">
-                                        <textarea class="form-control col-xs" rows="3" name="sign" id="sign" placeholder="个性签名"><?php echo isset($persons[0])?$persons[0]->pers_Sign:''?></textarea>
-                                    </div>
-                                    <button class="btn btn-info btn-lg">确认</button>
-                                    <input class="btn btn-info btn-lg" type="reset" value="重置" style="width:100%;margin-top:20px">
-                                    <!--                        <button class="reset"></button>-->
+                                        <div class="box">
+                                            <label for="height" class="info form-control">身高</label>
+                                            <input type="text" placeholder="请输入身高" class="form-control" id="height" name="height" value="<?php echo isset($persons[0])?$persons[0]->pers_Height:''?>"/>
+                                        </div>
+                                        <div class="box">
+                                            <label for="weight" class="info form-control">体重</label>
+                                            <input type="text" placeholder="请输入体重" class="form-control" id="weight" name="weight" value="<?php echo isset($persons[0])?$persons[0]->pers_Weight:''?>" placeholder="单位：公斤"/>
+                                        </div>
+                                        <div class="box">
+                                            <label for="waist" class="info form-control">腰围</label>
+                                            <input type="text" placeholder="请输入腰围" class="form-control" id="waist" name="waist" value="<?php echo isset($persons[0])?$persons[0]->pers_Waist:''?>"/>
+                                        </div>
+                                        <div class="box">
+                                            <label for="hipline" class="info form-control">臀围</label>
+                                            <input type="text" placeholder="请输入臀围" class="form-control" id="hipline" name="hipline" value="<?php echo isset($persons[0])?$persons[0]->pers_Hipline:''?>"/>
+                                        </div>
+                                        <div class="box">
+                                            <label for="telephone" class="info form-control">电话</label>
+                                            <input type="text" placeholder="请输入联系方式" class="form-control" id="telephone" name="telephone" value="<?php echo isset($persons[0])?$persons[0]->pers_Telephone:''?>"/>
+                                        </div>
+                                        <div class="box">
+                                            <textarea class="form-control col-xs" rows="3" name="sign" id="sign" placeholder="个性签名"><?php echo isset($persons[0])?$persons[0]->pers_Sign:''?></textarea>
+                                        </div>
+                                        <button class="btn btn-info btn-lg">确认</button>
+                                        <input class="btn btn-info btn-lg" type="reset" value="重置" style="width:100%;margin-top:20px">
+                                        <!--                        <button class="reset"></button>-->
                                     </form>
                                 </div>
                             </div>
@@ -145,20 +141,6 @@
                 </div>
 
             </div>
-            <!--            <div class="pet_article_dowload">-->
-            <!--                <div class="pet_article_dowload_title">关于Amaze UI</div>-->
-            <!--                <div class="pet_article_dowload_content">-->
-            <!--                    <div class="pet_article_dowload_triangle"></div>-->
-            <!--                    <div class="pet_article_dowload_ico"><img src="assets/img/footdon.png" alt=""></div>-->
-            <!--                    <div class="pet_article_dowload_content_font">-->
-            <!--                        Amaze UI 以移动优先（Mobile first）为理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。-->
-            <!--                    </div>-->
-            <!--                    <div class="pet_article_dowload_all">-->
-            <!--                        <a href="###" class="pet_article_dowload_Az am-icon-apple"> App store</a>-->
-            <!--                        <a href="###" class="pet_article_dowload_Pg am-icon-android"> Android</a>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
         </div>
 
         <div class="pet_article_footer_info">Copyright(c)2015 PetShow All Rights Reserved</div>

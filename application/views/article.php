@@ -14,19 +14,6 @@
 </head>
 <body style="background:#ececec">
 <div class="pet_mian">
-<!--    <div class="pet_head">-->
-<!--        <header data-am-widget="header"-->
-<!--                class="am-header am-header-default pet_head_block">-->
-<!--            <div class="am-header-left am-header-nav ">-->
-<!--                <a href="welcome/index" class="iconfont pet_head_jt_ico">&#xe601;</a>-->
-<!--            </div>-->
-<!---->
-<!--            <div class="am-header-right am-header-nav">-->
-<!--                <a href="javascript:;" class="iconfont pet_head_gd_ico">&#xe600;</a>-->
-<!--            </div>-->
-<!--        </header>-->
-<!--    </div>-->
-<!--    <div class="pet_mian">-->
         <div class="pet_head">
             <header data-am-widget="header"
                     class="am-header am-header-default pet_head_block">
@@ -59,7 +46,6 @@
                 <div data-am-widget="list_news" class="am-list-news am-list-news-default am-no-layout">
                     <div class="am-list-news-bd">
                         <ul class="am-list">
-
                             <?php
                             foreach($articles as $key => $article){
                             ?>
@@ -81,6 +67,10 @@
                                         <?php echo $article->arti_Content?>
                                     </div>
 
+
+                                </div>
+                                <div class="am-list-item-text pet_list_one_text">
+                                    <?php echo $article->arti_Date?>
                                 </div>
                                 <div class="am-u-sm-4 am-list-thumb">
                                     <a href="###" class="">
@@ -97,11 +87,27 @@
                 </div>
 
             </div>
+            <form class="am-form" action="welcome/insert_article" method="post">
+                <fieldset>
+                    <!--                <legend>表单标题</legend>-->
+                    <div class="am-form-group">
+                        <label for="doc-ipt-pwd-1" style="text-align:center">标题</label>
+                        <input type="text" name="title" class="" id="doc-ipt-pwd-1" placeholder="请输入文章标题">
+                    </div>
 
+                    <div class="am-form-group">
+                        <label for="doc-ta-1"  style="text-align:center">内容</label>
+                        <textarea class="" rows="5" id="doc-ta-1" name='content'></textarea>
+                    </div>
+
+                    <p><button type="submit" class="am-btn am-btn-primary" style="text-align:center">提交</button></p>
+                </fieldset>
+            </form>
         </div>
 
         <div class="pet_article_footer_info">Copyright(c)2015 PetShow All Rights Reserved</div>
     </div>
+
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>

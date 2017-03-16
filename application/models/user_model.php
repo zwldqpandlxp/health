@@ -15,15 +15,16 @@ class User_model extends CI_Model{
         ));
         return $this->db->affected_rows();
     }
-    public function get_by_name_pwd($name, $pwd){
-        //$this -> db -> query("select * from t_user where username='$name' and password='$pwd'");//有sql注入危险
-        return $this -> db -> get_where('health_user', array(
+    public function get_by_name_pwd($name, $pwd)
+    {
+        return $this->db->get_where('health_user', array(
             'user_Name' => $name,
             'user_Pwd' => $pwd
-        )) -> row(); // result();
+        ))->row();
     }
     public function get_users(){
-           $sql="select u.user_Name,pi.pict_Url from health_user u,health_picture pi where pi.pict_Id=u.pict_Id";
+        $sql="select u.user_Name,pi.pict_Url from health_user u,health_article a,health_picture pi where a.user_Id=u.user_Id and u.pict_Id=pi.pict_Id ORDER BY a.arti_Date DESC";
+//           $sql="select u.user_Name,pi.pict_Url from health_user u,health_picture pi where pi.pict_Id=u.pict_Id";
         return $this->db->query($sql)->result();
     }
     public function user_by_article($arti_Id){
