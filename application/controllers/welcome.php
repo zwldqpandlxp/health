@@ -6,10 +6,17 @@ class Welcome extends CI_Controller {
             $user_Id=$this->session->userdata('loginedUser')->user_Id;
             $this->load->model('person_model');
             $row=$this->person_model->find_person_by_userId($user_Id);
+//            echo"<pre>";
+//            var_dump($user_Id);
+//            var_dump($row);
+//            echo"</pre>";
+//            die();
             if($row){
                 redirect("welcome/person_perfect");
             }
             else{
+//                var_dump($user_Id);
+//                die();
                 redirect("welcome/person_imperfect");
             }
         }else{
@@ -32,15 +39,29 @@ class Welcome extends CI_Controller {
     }
     public function person_imperfect(){
         $loginedUser = $this->session->userdata("loginedUser");
+        $user_Id=$loginedUser->user_Id;
         $this->load->model('user_model');
+//        var_dump($loginedUser);
+//        die();
         $img = $this->user_model->get_headImg_by_pictId($loginedUser->pict_Id);
+        $this->load->model("person_model");
+        $persons= $this->person_model->find_person_by_userId($user_Id);
+//        var_dump($persons);
+//        die();
+//        $this->load->view('person_imperfect',array(
+//            'persons'=>$persons
+//        ));
         $this->load->view('person_imperfect',array(
-            'img' => $img
+            'img' => $img,
+            'persons'=>$persons
         ));
     }
     public function do_person_imperfect(){
-        $loginedUser = $this->session->userdata("loginedUser");
-        $user_Id= $loginedUser->user_Id;
+        if($this->session->userdata("loginedUser")){
+            $loginedUser = $this->session->userdata("loginedUser");
+            $user_Id= $loginedUser->user_Id;
+        }
+
 
         $username=$this->input->post('username');
         $sex=$this->input->post('sex');
@@ -54,13 +75,17 @@ class Welcome extends CI_Controller {
 
         $this->load->model('person_model');
         $persons=$this->person_model->find_person_by_userId($user_Id);
+
         if($persons){//如果当前这个人已经完善过信息，表明此人要修改信息
             $result=$this->person_model->update_person_imperfect($user_Id,$username,$sex,$date,$height,$weight,$waist,$hipline,$telephone,$sign);
-            if($result){//如果修改成功了，那么跳回主页
+//            var_dump($result);
+//            die();
+//            if($result){//如果修改成功了，那么跳回主页
                 redirect("welcome/index");
-            }else{//否则跳回修改页面重新修改
-                $this->load->view('person_imperfect');
-            }
+//            }else{//否则跳回修改页面重新修改
+////                $this->load->view('person_imperfect');
+//                redirect("welcome/do_person_imperfect");
+//            }
         }
 //        $this->load->model('person_model');
         else{//如果当前这个人没有完善过信息，那么让这个人去完善信息
@@ -91,6 +116,8 @@ class Welcome extends CI_Controller {
         $user_Id=$this->session->userdata("loginedUser")->user_Id;
         $this->load->model("person_model");
         $persons= $this->person_model->find_person_by_userId($user_Id);
+//        var_dump($persons);
+//        die();
         $this->load->view('person_imperfect',array(
             'persons'=>$persons
         ));
@@ -138,14 +165,18 @@ class Welcome extends CI_Controller {
         }
     }
     public function article(){
-        $this->load->model("article_model");
-        $this->load->model("user_model");
-        $articles=$this->article_model->get_articles();
-        $users=$this->user_model->get_users();
-        $this->load->view("article",array(
-            'articles'=>$articles,
-            'users'=>$users
-        ));
+		if($this->session->userdata("loginedUser")){
+			$this->load->model("article_model");
+			$this->load->model("user_model");
+			$articles=$this->article_model->get_articles();
+			$users=$this->user_model->get_users();
+			$this->load->view("article",array(
+				'articles'=>$articles,
+				'users'=>$users
+			));
+		}else{
+			redirect('welcome/login');
+		}
     }
     public function insert_article(){
         $loginedUser=$this->session->userdata("loginedUser");
@@ -266,6 +297,27 @@ class Welcome extends CI_Controller {
     public function stepsSubmit(){
         $value=$this->input->get('value');
         echo $value/10000*300;
+    }
+    public function video(){
+        $this->load->view("video");
+    }
+    public function freshvideo(){
+         $user=$this->session->userdata("loginedUser");
+//        var_dump($user);
+         $calorie=$this->input->get('calorie');
+        if(isset($user->calorie)){
+            $user->calorie=$user->calorie+$calorie;
+        }else{
+            $user->calorie=$calorie;
+        }
+         $this->session->set_userdata("loginedUser",$user);
+//        var_dump(123);
+//         var_dump($query);
+//         die();
+//         if($query){
+//             echo "yes";
+//         }
+        echo $user->calorie;
     }
 }
 
